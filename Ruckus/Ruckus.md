@@ -4,9 +4,11 @@ This PowerShell script will let you interact with ZoneDirector on a very basic l
 
 #### Functions
 
-Name: `New-RuckusSession`
-Description: This will create a connection to Ruckus and **NEEDS** to be called before any other functions as it sets up global varibles used throughout the script.
-Parameters: 
+**Name**: `New-RuckusSession`
+
+**Description**: This will create a connection to Ruckus and **NEEDS** to be called before any other functions as it sets up global varibles used throughout the script.
+
+**Parameters**: 
 * [*Mandatory*] Uri `String`
 This should be the URL that is used to get to the ZoneDirector Interface.
 E.G. `ruckus.Contoso.com/`
@@ -20,23 +22,22 @@ This switch should be used if you're ZoneDirector isn't using an SSL Certificate
 
 ___
 
-Name: `Get-ManagedAPs`
+**Name**: `Get-ManagedAPs`
 
-Description: This will return a list of all APs registered inside Ruckus' ZoneDirector.
+**Description**: This will return a list of all APs registered inside Ruckus' ZoneDirector.
 
-Parameters:
+**Parameters**:
 
 * ApGroup `Int`
 This parameter is for showing APs that aren't in the default (`0`) group.
 
 ___
 
-Name: `Get-APEvent`
+**Name**: `Get-APEvent`
 
-Description: This will show a list of all AP Events similar to Ruckus' event log on the admin interface.
+**Description**: This will show a list of all AP Events similar to Ruckus' event log on the admin interface.
 
-Parameters: 
-
+**Parameters**: 
 * Ap `Unkown`
 <Unkown> I couldn't work this out, but made it a param incase someone does
 * StartFrom `Int`
@@ -46,40 +47,40 @@ This is used to determine how many log messages you're wanting to pull down, it 
 
 ___
 
-Name: `Ban-Client`
+**Name**: `Ban-Client`
 
-Description: This bans the specified Mac Address; use caution as this command will block access for the specified Mac Address until you unban them.
+**Description**: This bans the specified Mac Address; use caution as this command will block access for the specified Mac Address until you unban them.
 
-Parameters:
+**Parameters**:
 * MacAddress `String`
 This needs to be a valid Mac Address.
 
 ___
 
-Name: Unban-Client
+**Name**: Unban-Client
 
-Description: This will unban the specified Mac Address, it does the reverse of `Ban-Client`
+**Description**: This will unban the specified Mac Address, it does the reverse of `Ban-Client`
 
-Parameters:
+**Parameters**:
 * MacAddress `String`
 This needs to be a valid Mac Address
 
 ___
 
-Name: Kick-Client
+**Name**: Kick-Client
 
-Description: This will temporarily kick a client from the network, take note the client is welcome to rejoin whenever it wants, it is only useful for debugging.
+**Description**: This will temporarily kick a client from the network, take note the client is welcome to rejoin whenever it wants, it is only useful for debugging.
 
-Parameters:
+**Parameters**:
 * MacAddress `String`
 This needs to be a valid Mac Address
 
 ___
 
-Name: Get-ActiveClients
+**Name**: Get-ActiveClients
 
-Description: This will show you all connected clients to all your APs with some helpful information about them such as the Mac of the connected AP and the client's Mac Address.
+**Description**: This will show you all connected clients to all your APs with some helpful information about them such as the Mac of the connected AP and the client's Mac Address.
 
-Parameters:
+**Parameters**:
 * Count `Int`
 This defaults to 15 but can be changed to any number, it will return this many clients.
