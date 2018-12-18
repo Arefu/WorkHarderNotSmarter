@@ -96,9 +96,9 @@ function Get-APEvent
 {
     [CmdletBinding()]
     param(
-        $Ap = "*",
-        $StartFrom = 0,
-        $Count = 15
+        [String]$Ap = "*",
+        [Int]$StartFrom = 0,
+        [Int]$Count = 15
     )
 
     #Login, Must Call New-RuckusSession First!
@@ -149,6 +149,10 @@ function New-RuckusSession
 
 function isValidMac
 {
+    param(
+        [Parameter(Mandatory=$True)]
+        [String]$MacAddress
+    )
     if(-not [REGEX]::IsMatch($MacAddress,"^([0-9a-fA-F][0-9a-fA-F]:){5}([0-9a-fA-F][0-9a-fA-F])$")) {
             Write-Error "$($MacAddress) is not a valid MAC Address, please check it and try again" -ErrorAction Stop
     }
