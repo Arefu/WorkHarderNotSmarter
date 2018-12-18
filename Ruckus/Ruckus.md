@@ -2,7 +2,7 @@
 
 This PowerShell script will let you interact with ZoneDirector on a very basic level, I've only taken the time to figure out what areas that I use, it should be easy for you to expand on what I've already learnt through my time poking about using [Fiddler](HTTPS://www.telerik.com/fiddler). This was tested on Ruckus ZoneDirector version: *9.13.3.0 build 41.* I take no responsibility for any network outage that these scripts cause.
 
-#### Functions
+## Functions
 
 **Name**: `New-RuckusSession`
 
