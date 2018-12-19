@@ -1,5 +1,5 @@
 # Spiceworks
-This is only a script that replicates the authorization of SpiceWorks, you can use the list below to get any information you want from the respective endpoint.
+This is only a script that replicates the authorization of SpiceWorks, you can use the list below to get any information you want from the respective endpoint. It was tested on SpiceWorks Version 7.5.00107
 
 ### End Points
 [Source](https://community.spiceworks.com/topic/144808-spiceworks-api-question?page=1#entry-803046)
