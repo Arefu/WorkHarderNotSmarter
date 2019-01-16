@@ -52,3 +52,13 @@ function New-RemoteDesktopThumbnail
     $ThumbnailBody = "<SerializableModel i:type=`"a:RemoteResourceThumbnail`" xmlns=`"http://schemas.datacontract.org/2004/07/RdClient.Shared.Data`" xmlns:i=`"http://www.w3.org/2001/XMLSchema-instance`" xmlns:a=`"http://schemas.datacontract.org/2004/07/RdClient.Shared.Models`"><a:EncodedThumbnail>$($BaseImage)</a:EncodedThumbnail><a:ResourceId/></SerializableModel>"
     $ThumbnailBody | Out-File "$($env:LOCALAPPDATA)\Packages\Microsoft.RemoteDesktop_8wekyb3d8bbwe\LocalState\RemoteDesktopData\RemoteResourceThumbnails\$($ConnectionFile)"-Encoding utf8 -NoNewline 
 }
+
+function Add-RemoteConnectionToGroup
+{
+    param(
+        [Parameter(Mandatory=$True)]
+        [STRING]$ConnectionHostName,
+        [Parameter(Mandatory=$True)]
+        [STRING]$GroupName
+    )
+}
