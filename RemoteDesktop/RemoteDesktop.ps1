@@ -1,6 +1,13 @@
 ﻿#$SupportedPackageNames = @("Microsoft.RemoteDesktop","Microsoft.MicrosoftRemoteDesktopPreview")
 function New-RemoteDesktopGroup
 {
+    param(
+        [Parameter(Mandatory=$True)]
+        [STRING]$GroupName,
+        [SWITCH]$IsExpanded
+    )
+    $TestGroup = "<SerializableModel i:type=`"a:GroupModel`" xmlns=`"http://schemas.datacontract.org/2004/07/RdClient.Shared.Data`" xmlns:i=`"http://www.w3.org/2001/XMLSchema-instance`" xmlns:a=`"http://schemas.datacontract.org/2004/07/RdClient.Shared.Models`"><a:IsExpanded>$($IsExpanded.IsPresent.ToString().ToLower())</a:IsExpanded><a:Name>$($GroupName)</a:Name></SerializableModel>"
+    $TestGroup | Out-File "$($env:LOCALAPPDATA)\Packages\Microsoft.RemoteDesktop_8wekyb3d8bbwe\LocalState\RemoteDesktopData\groups\$(New-Guid).model" -NoNewline -Encoding utf8
 }
 
 function New-RemoteDesktopConnection
