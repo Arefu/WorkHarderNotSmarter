@@ -26,7 +26,7 @@ Get-WmiObject Win32_PNPEntity | ForEach-Object {
     Write-Host "Device Name: "$_.Name
     Write-Host "Device ID: "$_.DeviceID
     if($_.ConfigManagerErrorCode -gt 20) {
-        Write-Host "Device Status: Unkown" -NoNewline
+        Write-Host "Device Status: Unknown" -NoNewline
         Write-Host " ("$_.ConfigManagerErrorCode")" -ForegroundColor Yellow
         continue;
     }
